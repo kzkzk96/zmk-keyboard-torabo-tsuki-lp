@@ -20,11 +20,11 @@
 
         layer_0 {
             bindings = <
-&none      &none         &none         &none     &none     &none                                              &none        &none     &none      &none       &none                 &none
-&kp TAB    &kp Q         &kp W         &kp E     &kp R     &kp T                                              &kp Y        &kp U     &kp I      &kp O       &kp P                 &kp AT_SIGN
-&kp CAPS   &kp A         &kp S         &kp D     &kp F     &kp G        &mkp LCLK                  &mkp RCLK  &kp H        &kp J     &kp K      &kp L       &kp SEMI              &kp SQT
-&kp LSHFT  &kp Z         &kp X         &kp C     &kp V     &kp B        &kp SPACE                  &kp RET    &kp N        &kp M     &kp COMMA  &kp DOT     &mt RIGHT_SHIFT FSLH  &kp RSHFT
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &kp LALT  &kp BSPC  &lt 2 SPACE  &mt LEFT_SHIFT LANGUAGE_1  &kp A      &lt 3 ENTER  &kp BSPC  &kp RALT   &kp ESCAPE  &kp RCTRL             &kp RCTRL
+&none      &none         &none         &none  &none     &none                                              &none        &none     &none      &none       &none                 &none
+&kp TAB    &kp Q         &kp W         &kp E  &kp R     &kp T                                              &kp Y        &kp U     &kp I      &kp O       &kp P                 &kp AT_SIGN
+&kp CAPS   &kp A         &kp S         &kp D  &kp F     &kp G        &mkp LCLK                  &mkp RCLK  &kp H        &kp J     &kp K      &kp L       &kp SEMI              &kp SQT
+&kp LSHFT  &kp Z         &kp X         &kp C  &kp V     &kp B        &kp SPACE                  &kp RET    &kp N        &kp M     &kp COMMA  &kp DOT     &mt RIGHT_SHIFT FSLH  &kp RSHFT
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none  &kp BSPC  &lt 2 SPACE  &mt LEFT_SHIFT LANGUAGE_1  &kp BSPC   &lt 3 ENTER  &kp BSPC  &kp RALT   &kp ESCAPE  &kp RCTRL             &kp RCTRL
             >;
         };
 
