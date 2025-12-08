@@ -16,7 +16,7 @@
 
         L_click {
             bindings = <&mkp LCLK>;
-            key-positions = <19 20>;
+            key-positions = <33 34>;
             layers = <0 1 2 3 4>;
         };
     };
