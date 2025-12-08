@@ -13,6 +13,11 @@
             key-positions = <28 29>;
             layers = <2>;
         };
+
+        L_click {
+            bindings = <&mkp LCLK>;
+            key-positions = <19 20>;
+        };
     };
 
     keymap {
