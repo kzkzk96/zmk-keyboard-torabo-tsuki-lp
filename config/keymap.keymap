@@ -37,6 +37,13 @@
             key-positions = <20 21>;
             layers = <0 1 2 3 4>;
         };
+
+        combo_JL {
+            bindings = <&mwh SCROLL>;
+            key-positions = <33 35>;
+            layers = <0 1 2 3 4>;
+            tapping-term-ms = 0;   // ★ タップ無効化 → 押している間だけスクロールモード
+        };
     };
 
     keymap {
