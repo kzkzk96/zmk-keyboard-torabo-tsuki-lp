@@ -5,6 +5,39 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+    behaviors {
+        // ▼ スクロールモード ON
+        scroll_mode_on: scroll_mode_on {
+            compatible = "zmk,behavior-simple";
+            label = "SCROLL_MODE_ON";
+            #binding-cells = <0>;
+            bindings = <&set_scroll_mode 1>;
+        };
+
+        // ▼ スクロールモード OFF
+        scroll_mode_off: scroll_mode_off {
+            compatible = "zmk,behavior-simple";
+            label = "SCROLL_MODE_OFF";
+            #binding-cells = <0>;
+            bindings = <&set_scroll_mode 0>;
+        };
+    };
+
+    // ▼ トラックボールの移動をスクロールへ切り替えるための input-processor
+    set_scroll_mode: set_scroll_mode {
+        compatible = "zmk,input-processor";
+        status = "okay";
+        scroll-toggle = <0>;
+    };
+
+    // ▼ スクロール量などの設定（水平・垂直スクロール）
+    pointing {
+        compatible = "zmk,pointing-device";
+        scroll-h = <15>;
+        scroll-v = <15>;
+        scroll-mode = <0>; // 0＝通常カーソル、1＝スクロールモード
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -38,11 +71,14 @@
             layers = <0 1 2 3 4>;
         };
 
+        // ▼ JL 同時押し → 押している間だけスクロールモード
         combo_JL {
-            bindings = <&mwh SCROLL>;
+            bindings = <&scroll_mode_on>, <&scroll_mode_off>;
             key-positions = <33 35>;
             layers = <0 1 2 3 4>;
-            tapping-term-ms = 0;   // ★ タップ無効化 → 押している間だけスクロールモード
+            flavor = "hold-preferred";   // ホールド優先
+            tapping-term-ms = <0>;       // タップ無効化 → 常にホールド扱い
+            timeout-ms = <200>;          // コンボ最大判定時間
         };
     };
 
@@ -55,7 +91,7 @@
 &kp TAB    &kp Q         &kp W         &kp E         &kp R             &kp T                                          &kp Y        &kp U  &kp I      &kp O       &kp P          &kp AT_SIGN
 &kp CAPS   &kp A         &kp S         &kp D         &kp F             &kp G        &mkp LCLK         &mkp RCLK       &kp H        &kp J  &kp K      &kp L       &kp MINUS      &kp EQUAL
 &kp LSHFT  &kp Z         &kp X         &kp C         &kp V             &kp B        &msc SCRL_UP      &msc SCRL_DOWN  &kp N        &kp M  &kp COMMA  &kp DOT     &kp SLASH      &mt RSHFT NON_US_BACKSLASH
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none         &lt 3 LANGUAGE_2  &lt 2 SPACE  &lt 1 LANGUAGE_1  &lt 1 BSPC      &lt 4 ENTER  &none  &none      &kp ESCAPE  &kp RIGHT_ALT  &kp RCTRL
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none         &lt 3 LANGUAGE_2  &lt 2 SPACE    &lt 1 LANGUAGE_1  &lt 1 BSPC        &lt 4 ENTER  &none  &none      &kp ESCAPE  &kp RIGHT_ALT  &kp RCTRL
             >;
         };
 
