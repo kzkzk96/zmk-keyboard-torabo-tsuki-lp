@@ -2,10 +2,24 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
+/* トラックボールの入力を拾う listener に
+ *  通常時: XY 反転だけ
+ *  layer 5 のとき: XY をスクロールに変換
+ * を設定する
+ */
 &trackball_listener {
+    /* もともと入っていた XY 反転設定 */
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+
+    /* layer 5 のときだけスクロールモードにする */
+    scroll_layer {
+        layers = <5>;
+        input-processors = <&zip_xy_to_scroll_mapper>;
+        process-next; /* これを書くと上の transform も併用される */
+    };
 };
 
+/* キーレイアウト用の transform は元のまま */
 &size_s_transform {
     col-offset = <7>;
 };
