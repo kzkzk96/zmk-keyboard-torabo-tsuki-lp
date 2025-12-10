@@ -39,10 +39,15 @@
         };
 
         /* ★追加：JL コンボ → layer5 ON */
-        scroll_mode {
+        combo_JL {
+            /* binding に &mo は device tree の layer-momentary behavior を指します。
+               zmk のバージョンで &mo のラベルが違う場合は CI エラーがでます（下で対処方法を示します）。 */
             bindings = <&mo 5>;
             key-positions = <33 35>;
             layers = <0 1 2 3 4>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <0>;  /* タップで判定しない（押している間のみオン） */
+            timeout-ms = <250>;
         };
     };
 
