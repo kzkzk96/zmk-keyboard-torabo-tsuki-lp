@@ -1,0 +1,72 @@
+/ {
+    behaviors {
+
+        // ==========================================
+        // JIS互換 Mod-Morph（精査済み最適セット）
+        // ==========================================
+
+        // Shift + 2 → "
+        mo2_dquote: mod_morph_2 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N2>, <&kp DQT>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        // Shift + 7 → &
+        mo7_amp: mod_morph_7 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N7>, <&kp AMPS>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        // Shift + 8 → *
+        mo8_asterisk: mod_morph_8 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N8>, <&kp ASTR>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        // Shift + 9 → (
+        mo9_lparen: mod_morph_9 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N9>, <&kp LPAR>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        // Shift + 0 → )
+        mo0_rparen: mod_morph_0 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N0>, <&kp RPAR>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        // Shift + - → _
+        mo_minus_underscore: mod_morph_minus {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp UNDERSCORE>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        // Shift + ; → :
+        mo_semi_colon: mod_morph_semi {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SEMI>, <&kp COLON>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        // Shift + ` → ~
+        mo_grave_tilde: mod_morph_grave {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE>, <&kp TILDE>;
+            mods = <(MOD_LSFT)>;
+        };
+    };
+};
