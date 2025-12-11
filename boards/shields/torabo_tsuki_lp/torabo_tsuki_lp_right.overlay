@@ -2,6 +2,11 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
+/* ★ここでトラックボールの CPI を 400 に設定 */
+&trackball {
+    res-cpi = <400>;
+}
+
 /* トラックボールの入力を拾う listener に
  *  通常時: XY 反転だけ
  *  layer 5 のとき:
