@@ -4,40 +4,35 @@
 
 /* トラックボールの入力を拾う listener に
  *  通常時: XY 反転だけ
- *  layer 5 のとき: XY をスクロールに変換
+ *  layer 5 のとき:
+ *    - X を 0.4倍（今の 4割）
+ *    - Y を 0.7倍（今の 7割）
+ *    - XY をスクロールイベントに変換
  * を設定する
  */
 &trackball_listener {
-    /* もともと入っていた XY 反転設定 */
+    /* もともと入っていた XY 反転設定（カーソル用） */
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 
     /* layer 5 のときだけスクロールモードにする */
     scroll_layer {
         layers = <5>;
 
-        /* ★ここで速度調整★
-         *  縦：今の 7 割 → 7/10
-         *  横：今の 4 割 → 2/5
-         *
-         *  X = 横方向, Y = 縦方向
+        /* ★スクロール時の速度調整★
+         *   X = 横方向 → 2/5 = 0.4倍（今の 4割）
+         *   Y = 縦方向 → 7/10 = 0.7倍（今の 7割）
          */
         input-processors =
-            <&zip_x_scaler 2 5>   /* 横：0.4倍（2/5） */
-            <&zip_y_scaler 7 10>  /* 縦：0.7倍（7/10） */
+            <&zip_x_scaler 2 5>,   /* 横スクロールを 0.4倍 */
+            <&zip_y_scaler 7 10>,  /* 縦スクロールを 0.7倍 */
             <&zip_xy_to_scroll_mapper>;
-        process-next; /* これを書くと上の transform も併用される */
+
+        /* 上の親ノードの transform（XY 反転）も続けて実行させる */
+        process-next;
     };
 };
 
 /* キーレイアウト用の transform は元のまま */
-&size_s_transform {
-    col-offset = <7>;
-};
-
-&size_m_transform {
-    col-offset = <7>;
-};
-
-&size_l_transform {
-    col-offset = <7>;
-};
+&size_s_transform { col-offset = <7>; };
+&size_m_transform { col-offset = <7>; };
+&size_l_transform { col-offset = <7>; };
