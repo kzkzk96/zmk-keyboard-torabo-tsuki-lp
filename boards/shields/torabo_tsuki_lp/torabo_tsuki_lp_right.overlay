@@ -14,7 +14,17 @@
     /* layer 5 のときだけスクロールモードにする */
     scroll_layer {
         layers = <5>;
-        input-processors = <&zip_xy_to_scroll_mapper>;
+
+        /* ★ここで速度調整★
+         *  縦：今の 7 割 → 7/10
+         *  横：今の 4 割 → 2/5
+         *
+         *  X = 横方向, Y = 縦方向
+         */
+        input-processors =
+            <&zip_x_scaler 2 5>   /* 横：0.4倍（2/5） */
+            <&zip_y_scaler 7 10>  /* 縦：0.7倍（7/10） */
+            <&zip_xy_to_scroll_mapper>;
         process-next; /* これを書くと上の transform も併用される */
     };
 };
