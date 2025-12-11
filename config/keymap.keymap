@@ -39,6 +39,7 @@
         };
 
         /* ★追加：JL コンボ → layer5 ON */
+
         scroll_mode {
             bindings = <&mo 5>;
             key-positions = <33 35>;
@@ -100,13 +101,14 @@
         };
 
         /* ★追加：スクロールモード用 layer_5（空でOK） */
+
         layer_5 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&none           &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
+&none           &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
+&none           &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&kp LEFT_SHIFT  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &kp RIGHT_SHIFT
+&none           &none  &none  &none  &none  &none  &none  &none
             >;
         };
     };
