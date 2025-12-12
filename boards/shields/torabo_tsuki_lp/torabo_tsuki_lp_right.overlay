@@ -1,6 +1,7 @@
 #include "torabo_tsuki_lp.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 /* 右手トラックボール設定
  * - 通常（カーソル）: XY反転 + 0.6倍（3/5）
@@ -9,6 +10,30 @@
  *     縦 1.0倍（変更なし）
  *     横方向だけ反転（感覚に合わせる）
  */
+
+/ {
+    input_processors {
+        zip_scroll_x_scaler: zip_scroll_x_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+
+        zip_scroll_y_scaler: zip_scroll_y_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;AC
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL>;
+            track-remainders;
+        };
+    };
+};
+
+
+
+
 &trackball_listener {
     /* 通常時（カーソル用）：XY反転 + 0.6倍 */
     input-processors = <
@@ -25,6 +50,8 @@
             &zip_x_scaler 1 2
             &zip_xy_to_scroll_mapper
             &zip_scroll_scaler 2 10
+            &zip_scroll_x_scaler 1 2
+            &zip_scroll_y_scaler 1 10
             &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT)
         >;
     };
