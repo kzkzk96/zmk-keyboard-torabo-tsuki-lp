@@ -2,38 +2,30 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-/* ★ トラックボールの CPI を 400 にする */
-&trackball {
-    res-cpi = <600>;
-};
-
-/* トラックボール用 listener の設定
- *  - 通常時      : XY を反転（今まで通りカーソル用）
- *  - layer 5 時 : スクロールモード
- *        * X(横) を 0.4倍（今の 4 割）
- *        * Y(縦) を 0.7倍（今の 7 割）
- *        * 左右方向は反転（感覚に合わせる）
+/* 右手トラックボール設定
+ * - 通常（カーソル）: XY反転 + 0.6倍（3/5）
+ * - layer 5（スクロール）:
+ *     横 0.5倍（1/2）
+ *     縦 1.0倍（変更なし）
+ *     横方向だけ反転（感覚に合わせる）
  */
 &trackball_listener {
-    /* もともと入っていた XY 反転（カーソル用） */
-    input-processors =
-        <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+    /* 通常時（カーソル用）：XY反転 + 0.6倍 */
+    input-processors = <
+        &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+        &zip_x_scaler 3 5
+        &zip_y_scaler 3 5
+    >;
 
-    /* ★ layer 5 だけスクロールモード ★ */
+    /* layer 5 のときだけスクロールに変換（カーソル側の0.6倍とは独立） */
     scroll_layer {
         layers = <5>;
 
-        /* ここがスクロール用パイプライン
-         *   1) X を 2/5 = 0.4倍
-         *   2) Y を 7/10 = 0.7倍
-         *   3) XY → スクロールイベントに変換
-         *   4) スクロールの X だけ反転（左右の感覚を合わせる）
-         */
-        input-processors =
-            <&zip_x_scaler 2 5>,   /* 横スクロール 0.4倍 */
-            <&zip_y_scaler 7 10>,  /* 縦スクロール 0.7倍 */
-            <&zip_xy_to_scroll_mapper>,
-            <&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT)>;
+        input-processors = <
+            &zip_x_scaler 1 2
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT)
+        >;
     };
 };
 
