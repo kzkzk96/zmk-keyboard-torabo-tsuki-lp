@@ -31,7 +31,7 @@
 
 /* --- 括弧・記号ブロック --- */
 #define JP_LBKT   RBKT          // [  ([キー)
-#define JP_BSLH   INT1          // \  (ろキー) ※ZMK: International 1
+#define JP_BSLH   LBRC //INT1          // \  (ろキー) ※ZMK: International 1
 #define JP_RBKT   BSLH          // ]  (]キー)
 #define JP_CARET  EQUAL         // ^  (^~キーの通常)
 #define JP_UNDER  LBRC //LS(INT1)      // _  (ろキーの Shift)
