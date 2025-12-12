@@ -43,10 +43,10 @@
 / {
     behaviors {
 
-        /* ===== JIS symbol mod-morph (corrected) ===== */
+        /* ===== JIS symbol mod-morph ===== */
 
         // 1 !
-        JPmm_1_excl {
+        JPmm_1_excl: JPmm_1_excl {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N1>, <&kp JP_EXCL>;
@@ -54,7 +54,7 @@
         };
 
         // 2 "
-        JPmm_2_dq {
+        JPmm_2_dq: JPmm_2_dq {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N2>, <&kp JP_DQ>;
@@ -62,7 +62,7 @@
         };
 
         // 3 #
-        JPmm_3_hash {
+        JPmm_3_hash: JPmm_3_hash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N3>, <&kp JP_HASH>;
@@ -70,7 +70,7 @@
         };
 
         // 4 $
-        JPmm_4_doll {
+        JPmm_4_doll: JPmm_4_doll {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N4>, <&kp JP_DOLL>;
@@ -78,7 +78,7 @@
         };
 
         // 5 %
-        JPmm_5_perc {
+        JPmm_5_perc: JPmm_5_perc {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N5>, <&kp JP_PERC>;
@@ -86,7 +86,7 @@
         };
 
         // 6 &
-        JPmm_6_amp {
+        JPmm_6_amp: JPmm_6_amp {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N6>, <&kp JP_AMP>;
@@ -94,7 +94,7 @@
         };
 
         // 7 '
-        JPmm_7_sq {
+        JPmm_7_sq: JPmm_7_sq {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N7>, <&kp JP_SQ>;
@@ -102,7 +102,7 @@
         };
 
         // 8 (
-        JPmm_8_lpar {
+        JPmm_8_lpar: JPmm_8_lpar {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N8>, <&kp JP_LPAR>;
@@ -110,7 +110,7 @@
         };
 
         // 9 )
-        JPmm_9_rpar {
+        JPmm_9_rpar: JPmm_9_rpar {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N9>, <&kp JP_RPAR>;
@@ -118,7 +118,7 @@
         };
 
         // - =
-        JPmm_minus_eq {
+        JPmm_minus_eq: JPmm_minus_eq {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp JP_MINUS>, <&kp JP_EQ>;
@@ -126,7 +126,7 @@
         };
 
         // ^ ~
-        JPmm_caret_tilde {
+        JPmm_caret_tilde: JPmm_caret_tilde {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp JP_CARET>, <&kp JP_TILDE>;
@@ -134,7 +134,7 @@
         };
 
         // @ `
-        JPmm_at_grave {
+        JPmm_at_grave: JPmm_at_grave {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp JP_AT>, <&kp JP_GRAVE>;
@@ -142,7 +142,7 @@
         };
 
         // [ {
-        JPmm_lbkt_lbr {
+        JPmm_lbkt_lbr: JPmm_lbkt_lbr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp JP_LBKT>, <&kp JP_LBR>;
@@ -150,7 +150,7 @@
         };
 
         // ] }
-        JPmm_rbkt_rbr {
+        JPmm_rbkt_rbr: JPmm_rbkt_rbr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp JP_RBKT>, <&kp JP_RBR>;
@@ -158,7 +158,7 @@
         };
 
         // ; +
-        JPmm_semi_plus {
+        JPmm_semi_plus: JPmm_semi_plus {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp JP_SEMI>, <&kp JP_PLUS>;
@@ -166,7 +166,7 @@
         };
 
         // : *
-        JPmm_colon_astr {
+        JPmm_colon_astr: JPmm_colon_astr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp JP_COLON>, <&kp JP_ASTR>;
@@ -174,7 +174,7 @@
         };
 
         // , <
-        JPmm_comma_lt {
+        JPmm_comma_lt: JPmm_comma_lt {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp JP_COMMA>, <&kp JP_LT>;
@@ -182,7 +182,7 @@
         };
 
         // . >
-        JPmm_dot_gt {
+        JPmm_dot_gt: JPmm_dot_gt {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp JP_DOT>, <&kp JP_GT>;
@@ -190,7 +190,7 @@
         };
 
         // / ?
-        JPmm_slash_qm {
+        JPmm_slash_qm: JPmm_slash_qm {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp JP_SLASH>, <&kp JP_QMARK>;
@@ -198,7 +198,7 @@
         };
 
         // ろ \ _
-        JPmm_ro_under {
+        JPmm_ro_under: JPmm_ro_under {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp JP_BSLH>, <&kp JP_UNDER>;
@@ -206,4 +206,3 @@
         };
     };
 };
-
