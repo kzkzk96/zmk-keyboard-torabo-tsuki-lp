@@ -4,7 +4,7 @@
 
 /* ★ トラックボールの CPI を 400 にする */
 &trackball {
-    res-cpi = <400>;
+    res-cpi = <600>;
 };
 
 /* トラックボール用 listener の設定
