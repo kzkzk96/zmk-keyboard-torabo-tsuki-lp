@@ -1,44 +1,44 @@
 /* ===== JIS alias (ZMK safe) ===== */
-
 /* --- 基本記号 --- */
 #define JP_EXCL   EXCLAMATION   // !
-#define JP_DQ     DQT           // "
+#define JP_DQ     AT            // "  (Shift+2)
 #define JP_HASH   HASH          // #
 #define JP_DOLL   DOLLAR        // $
 #define JP_PERC   PERCENT       // %
-#define JP_AMP    AMPS          // &
-#define JP_SQ     QUOTE         // '
-#define JP_LPAR   LPAR          // (
-#define JP_RPAR   RPAR          // )
-#define JP_ASTR   ASTR          // *
-#define JP_PLUS   PLUS          // +
+#define JP_AMP    CARET         // &  (Shift+6)
+#define JP_SQ     AMPS          // '  (Shift+7)
+#define JP_LPAR   ASTR          // (  (Shift+8)
+#define JP_RPAR   LPAR          // )  (Shift+9)
+#define JP_ASTR   DQT           // *  (「:*」キーの Shift)
+#define JP_PLUS   COLON         // +  (「;+」キーの Shift)
 #define JP_COMMA  COMMA         // ,
 #define JP_MINUS  MINUS         // -
 #define JP_DOT    DOT           // .
 #define JP_SLASH  SLASH         // /
 
 /* --- 数字系記号 --- */
-#define JP_COLON  COLON         // :
+#define JP_COLON  QUOTE         // :  (「:*」キーの通常)
 #define JP_SEMI   SEMI          // ;
 #define JP_LT     LT            // <
-#define JP_EQ     EQUAL         // =
+#define JP_EQ     UNDERSCORE    // =  (「-=」キーの Shift)
 #define JP_GT     GT            // >
 #define JP_QMARK  QMARK         // ?
-#define JP_AT     AT            // @
+#define JP_AT     LBKT          // @  (@キー)
 
 /* --- 括弧・記号ブロック --- */
-#define JP_LBKT   LBKT          // [
-#define JP_BSLH   BSLH          // \  (¥ は Windows 側で処理)
-#define JP_RBKT   RBKT          // ]
-#define JP_CARET CARET         // ^
-#define JP_UNDER  UNDERSCORE   // _
-#define JP_GRAVE  GRAVE        // `
+#define JP_LBKT   RBKT          // [  ([キー)
+#define JP_BSLH   INT1          // \  (ろキー) ※ZMK: International 1
+#define JP_RBKT   BSLH          // ]  (]キー)
+#define JP_CARET  EQUAL         // ^  (^~キーの通常)
+#define JP_UNDER  LS(INT1)      // _  (ろキーの Shift)
+#define JP_GRAVE  LBRC          // `  (@キーの Shift)
 
 /* --- シフト記号（JISでも使用） --- */
-#define JP_LBR   LBRACE        // {
-#define JP_PIPE  PIPE          // |
-#define JP_RBR   RBRACE        // }
-#define JP_TILDE TILDE         // ~
+#define JP_LBR    RBRC          // {  ([キーの Shift)
+#define JP_PIPE   LS(INT3)      // |  (¥キーの Shift) ※ZMK: International 3
+#define JP_RBR    PIPE          // }  (]キーの Shift)
+#define JP_TILDE  PLUS          // ~  (^~キーの Shift)
+
 
 / {
     behaviors {
@@ -206,10 +206,4 @@
         };
     };
 };
-
-
-
-
-
-
 
