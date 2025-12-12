@@ -26,14 +26,16 @@
             layers = <0 1 2 3 4>;
         };
 
+        //UI:進む
         combo_UI {
-            bindings = <&mkp MB4>;
+            bindings = <&mkp MB5>;
             key-positions = <19 20>;
             layers = <0 1 2 3 4>;
         };
 
+        //IO:戻る
         combo_IO {
-            bindings = <&mkp MB5>;
+            bindings = <&mkp MB4>;
             key-positions = <20 21>;
             layers = <0 1 2 3 4>;
         };
@@ -100,15 +102,15 @@
             >;
         };
 
-        /* ★追加：スクロールモード用 layer_5（空でOK） */
+        /* ★追加：スクロールモード用 layer_5 shiftのみ*/
 
         layer_5 {
             bindings = <
-&none           &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
-&none           &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
-&none           &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&kp LEFT_SHIFT  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &kp RIGHT_SHIFT
-&none           &none  &none  &none  &none  &none  &none  &none
+&none           &none   &none   &none   &none   &none                      &none  &none  &none  &none  &none  &none
+&none           &none   &none   &none   &none   &none                      &none  &none  &none  &none  &none  &none
+&none           &none   &none   &none   &none   &none   &none       &none  &none  &none  &none  &none  &none  &none
+&kp LEFT_SHIFT  &none   &none   &none   &none   &none   &none       &none  &none  &none  &none  &none  &none  &kp RIGHT_SHIFT
+&none           &none   &none   &none   &none   &none   &none       &none  &none  &none  &none  &none  &none  &none
             >;
         };
     };
