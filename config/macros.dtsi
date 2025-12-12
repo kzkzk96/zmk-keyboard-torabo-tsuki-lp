@@ -1,72 +1,215 @@
+/* ===== JIS alias (ZMK safe) ===== */
+
+/* --- 基本記号 --- */
+#define JP_EXCL   EXCLAMATION   // !
+#define JP_DQ     DQT           // "
+#define JP_HASH   HASH          // #
+#define JP_DOLL   DOLLAR        // $
+#define JP_PERC   PERCENT       // %
+#define JP_AMP    AMPS          // &
+#define JP_SQ     QUOTE         // '
+#define JP_LPAR   LPAR          // (
+#define JP_RPAR   RPAR          // )
+#define JP_ASTR   ASTR          // *
+#define JP_PLUS   PLUS          // +
+#define JP_COMMA  COMMA         // ,
+#define JP_MINUS  MINUS         // -
+#define JP_DOT    DOT           // .
+#define JP_SLASH  SLASH         // /
+
+/* --- 数字系記号 --- */
+#define JP_COLON  COLON         // :
+#define JP_SEMI   SEMI          // ;
+#define JP_LT     LT            // <
+#define JP_EQ     EQUAL         // =
+#define JP_GT     GT            // >
+#define JP_QMARK  QMARK         // ?
+#define JP_AT     AT            // @
+
+/* --- 括弧・記号ブロック --- */
+#define JP_LBKT   LBKT          // [
+#define JP_BSLH   BSLH          // \  (¥ は Windows 側で処理)
+#define JP_RBKT   RBKT          // ]
+#define JP_CARET CARET         // ^
+#define JP_UNDER  UNDERSCORE   // _
+#define JP_GRAVE  GRAVE        // `
+
+/* --- シフト記号（JISでも使用） --- */
+#define JP_LBR   LBRACE        // {
+#define JP_PIPE  PIPE          // |
+#define JP_RBR   RBRACE        // }
+#define JP_TILDE TILDE         // ~
+
 / {
     behaviors {
 
-        // ==========================================
-        // JIS互換 Mod-Morph（精査済み最適セット）
-        // ==========================================
+        /* ===== JIS symbol mod-morph (corrected) ===== */
 
-        // Shift + 2 → "
-        mo2_dquote: mod_morph_2 {
+        // 1 !
+        JPmm_1_excl {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N2>, <&kp DQT>;
-            mods = <(MOD_LSFT)>;
+            bindings = <&kp N1>, <&kp JP_EXCL>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
-        // Shift + 7 → &
-        mo7_amp: mod_morph_7 {
+        // 2 "
+        JPmm_2_dq {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N7>, <&kp AMPS>;
-            mods = <(MOD_LSFT)>;
+            bindings = <&kp N2>, <&kp JP_DQ>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
-        // Shift + 8 → *
-        mo8_asterisk: mod_morph_8 {
+        // 3 #
+        JPmm_3_hash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N8>, <&kp ASTR>;
-            mods = <(MOD_LSFT)>;
+            bindings = <&kp N3>, <&kp JP_HASH>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
-        // Shift + 9 → (
-        mo9_lparen: mod_morph_9 {
+        // 4 $
+        JPmm_4_doll {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N9>, <&kp LPAR>;
-            mods = <(MOD_LSFT)>;
+            bindings = <&kp N4>, <&kp JP_DOLL>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
-        // Shift + 0 → )
-        mo0_rparen: mod_morph_0 {
+        // 5 %
+        JPmm_5_perc {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N0>, <&kp RPAR>;
-            mods = <(MOD_LSFT)>;
+            bindings = <&kp N5>, <&kp JP_PERC>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
-        // Shift + - → _
-        mo_minus_underscore: mod_morph_minus {
+        // 6 &
+        JPmm_6_amp {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&kp UNDERSCORE>;
-            mods = <(MOD_LSFT)>;
+            bindings = <&kp N6>, <&kp JP_AMP>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
-        // Shift + ; → :
-        mo_semi_colon: mod_morph_semi {
+        // 7 '
+        JPmm_7_sq {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp SEMI>, <&kp COLON>;
-            mods = <(MOD_LSFT)>;
+            bindings = <&kp N7>, <&kp JP_SQ>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
-        // Shift + ` → ~
-        mo_grave_tilde: mod_morph_grave {
+        // 8 (
+        JPmm_8_lpar {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp GRAVE>, <&kp TILDE>;
-            mods = <(MOD_LSFT)>;
+            bindings = <&kp N8>, <&kp JP_LPAR>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // 9 )
+        JPmm_9_rpar {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N9>, <&kp JP_RPAR>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // - =
+        JPmm_minus_eq {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp JP_MINUS>, <&kp JP_EQ>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // ^ ~
+        JPmm_caret_tilde {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp JP_CARET>, <&kp JP_TILDE>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // @ `
+        JPmm_at_grave {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp JP_AT>, <&kp JP_GRAVE>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // [ {
+        JPmm_lbkt_lbr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp JP_LBKT>, <&kp JP_LBR>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // ] }
+        JPmm_rbkt_rbr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp JP_RBKT>, <&kp JP_RBR>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // ; +
+        JPmm_semi_plus {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp JP_SEMI>, <&kp JP_PLUS>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // : *
+        JPmm_colon_astr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp JP_COLON>, <&kp JP_ASTR>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // , <
+        JPmm_comma_lt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp JP_COMMA>, <&kp JP_LT>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // . >
+        JPmm_dot_gt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp JP_DOT>, <&kp JP_GT>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // / ?
+        JPmm_slash_qm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp JP_SLASH>, <&kp JP_QMARK>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // ろ \ _
+        JPmm_ro_under {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp JP_BSLH>, <&kp JP_UNDER>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
         };
     };
 };
+
+
+
+
+
+
+
