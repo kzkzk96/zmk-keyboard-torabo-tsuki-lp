@@ -201,7 +201,7 @@
         JPmm_bslh_pipe: JPmm_bslh_pipe {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp JP_BSLH>, <&kp JP_QMAJP_PIPERK>;
+            bindings = <&kp JP_BSLH>, <&kp JP_PIPERK>;
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
