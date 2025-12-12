@@ -34,12 +34,12 @@
 #define JP_BSLH   INT1          // \  (ろキー) ※ZMK: International 1
 #define JP_RBKT   BSLH          // ]  (]キー)
 #define JP_CARET  EQUAL         // ^  (^~キーの通常)
-#define JP_UNDER  LS(INT1)      // _  (ろキーの Shift)
+#define JP_UNDER  LBRC //LS(INT1)      // _  (ろキーの Shift)
 #define JP_GRAVE  LBRC          // `  (@キーの Shift)
 
 /* --- シフト記号（JISでも使用） --- */
 #define JP_LBR    RBRC          // {  ([キーの Shift)
-#define JP_PIPE   LS(INT3)      // |  (¥キーの Shift) ※ZMK: International 3
+#define JP_PIPE   LBRC //LS(INT3)      // |  (¥キーの Shift) ※ZMK: International 3
 #define JP_RBR    PIPE          // }  (]キーの Shift)
 #define JP_TILDE  PLUS          // ~  (^~キーの Shift)
 
