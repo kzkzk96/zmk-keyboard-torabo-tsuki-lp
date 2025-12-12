@@ -11,7 +11,7 @@
 #define JP_PERC   PERCENT       // %
 #define JP_AMP    CARET         // &  (Shift+6)
 #define JP_SQ     AMPS          // '  (Shift+7)
-#define JP_LPAR   ASTR          // (  (Shift+8)
+#define JP_LPAR   STAR //ASTR          // (  (Shift+8)
 #define JP_RPAR   LPAR          // )  (Shift+9)
 #define JP_ASTR   DQT           // *  (「:*」キーの Shift)
 #define JP_PLUS   COLON         // +  (「;+」キーの Shift)
@@ -21,7 +21,7 @@
 #define JP_SLASH  SLASH         // /
 
 /* --- 数字系記号 --- */
-#define JP_COLON  QUOTE         // :  (「:*」キーの通常)
+#define JP_COLON  SQT //QUOTE         // :  (「:*」キーの通常)
 #define JP_SEMI   SEMI          // ;
 #define JP_LT     LT            // <
 #define JP_EQ     UNDERSCORE    // =  (「-=」キーの Shift)
