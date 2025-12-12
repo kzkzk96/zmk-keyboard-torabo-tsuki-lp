@@ -84,7 +84,7 @@
 
 &trans  &JPmm_1_excl  &JPmm_2_dq  &JPmm_3_hash  &JPmm_4_doll  &JPmm_5_perc                  &JPmm_6_amp            &JPmm_7_sq             &JPmm_8_lpar     &JPmm_9_rpar         &kp N0         &JPmm_at_grave
 &trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &trans  &trans  &JPmm_lbkt_lbr  &JPmm_rbkt_rbr  &JPmm_caret_tilde  &JPmm_bslh_pipe  &JPmm_minus_eq      &trans
-&trans  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &trans  &trans  &JPmm_semi_plus          &JPmm_colon_astr           &JPmm_comma_lt  &JPmm_dot_gt     &JPmm_slash_qm  &mt RSHFT JPmm_ro_under
+&trans  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &trans  &trans  &JPmm_semi_plus          &JPmm_colon_astr           &JPmm_comma_lt  &JPmm_dot_gt     &JPmm_slash_qm  &JPmm_ro_under
 
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans             &trans     &trans         &trans         &trans
             >;
