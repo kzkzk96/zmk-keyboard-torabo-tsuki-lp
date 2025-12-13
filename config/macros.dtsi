@@ -226,14 +226,13 @@
         /* ro: tap=JPmm_ro_under, hold=Right Shift */
         JPro_mt_ro: JPro_mt_ro {
             compatible = "zmk,behavior-hold-tap";
-            label = "JPRO_MT_RO";
-            #binding-cells = <1>;          /* ← &kp 用にキーコード1つを keymap から受け取る */
+            #binding-cells = <2>;
 
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
 
-            /* ここは「引数なし」で phandle だけ並べる（←今回のエラーのポイント） */
-            bindings = <&kp &JPmm_ro_under>;
+            /* phandleだけ書く（&kp の引数は keymap 側から渡す） */
+            bindings = <&kp>, <&JPmm_ro_under>;
         };
 
     };
