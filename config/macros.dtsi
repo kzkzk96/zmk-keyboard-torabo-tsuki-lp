@@ -1,7 +1,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/modifiers.h>
 
-
 /* ===== JIS alias (ZMK safe) ===== */
 /* --- 基本記号 --- */
 #define JP_EXCL   EXCLAMATION   // !
@@ -11,7 +10,7 @@
 #define JP_PERC   PERCENT       // %
 #define JP_AMP    CARET         // &  (Shift+6)
 #define JP_SQ     AMPS          // '  (Shift+7)
-#define JP_LPAR   STAR //ASTR          // (  (Shift+8)
+#define JP_LPAR   STAR          // (  (Shift+8) ※あなたの環境では ASTR ではなく STAR が通る
 #define JP_RPAR   LPAR          // )  (Shift+9)
 #define JP_ASTR   DQT           // *  (「:*」キーの Shift)
 #define JP_PLUS   COLON         // +  (「;+」キーの Shift)
@@ -21,28 +20,35 @@
 #define JP_SLASH  SLASH         // /
 
 /* --- 数字系記号 --- */
-#define JP_COLON  SQT //QUOTE         // :  (「:*」キーの通常)
+#define JP_COLON  SQT           // :  (「:*」キーの通常) ※あなたの環境では QUOTE ではなく SQT が通る
 #define JP_SEMI   SEMI          // ;
 #define JP_LT     LT            // <
-#define JP_EQ     UNDERSCORE    // =  (「-=」キーの Shift)
+#define JP_EQ     UNDERSCORE    // =  (「-=」キーの Shift) ※=そのものは JISでは別キーだが、用途によりここは維持
 #define JP_GT     GT            // >
 #define JP_QMARK  QMARK         // ?
 #define JP_AT     LBKT          // @  (@キー)
 
 /* --- 括弧・記号ブロック --- */
 #define JP_LBKT   RBKT          // [  ([キー)
-#define JP_BSLH   LBRC //INT1          // \  (ろキー) ※ZMK: International 1
-#define JP_RBKT   BSLH          // ]  (]キー)
+/*
+ * ここが今回の修正ポイント（方針どおり）
+ * - ろキー相当 → NUBS (Non-US Backslash)
+ * - ¥キー相当  → BSLH (Backslash)
+ * - _ や | は LS() で「Shift込みの物理キー」を送る
+ */
+#define JP_BSLH   NUBS          // \  (ろキー相当)
+#define JP_UNDER  LS(NUBS)      // _  (Shift+ろ)
+#define JP_YEN    BSLH          // ¥キー相当（物理キーは \ / ¥ の所。OS側で¥になるのは許容）
+#define JP_PIPE   LS(BSLH)      // |  (Shift+¥キー)
+
+#define JP_RBKT   BSLH          // ]  (]キー) ※ここはあなたの既存定義を維持
 #define JP_CARET  EQUAL         // ^  (^~キーの通常)
-#define JP_UNDER  LBRC //LS(INT1)      // _  (ろキーの Shift)
 #define JP_GRAVE  LBRC          // `  (@キーの Shift)
 
 /* --- シフト記号（JISでも使用） --- */
 #define JP_LBR    RBRC          // {  ([キーの Shift)
-#define JP_PIPE   LBRC //LS(INT3)      // |  (¥キーの Shift) ※ZMK: International 3
 #define JP_RBR    PIPE          // }  (]キーの Shift)
 #define JP_TILDE  PLUS          // ~  (^~キーの Shift)
-
 
 / {
     behaviors {
@@ -201,20 +207,36 @@
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
-        // \ |
+        // ¥キー: tap=\ (物理キー), Shiftで | になるようにしたい → 2つ目を JP_PIPE(=LS(BSLH)) にする
         JPmm_bslh_pipe: JPmm_bslh_pipe {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp JP_BSLH>, <&kp JP_PIPE>;
+            bindings = <&kp JP_YEN>, <&kp JP_PIPE>;
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
-        // ろ \ _
+        // ろキー: tap=\ (NUBS), Shiftで _ (LS(NUBS))
         JPmm_ro_under: JPmm_ro_under {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp JP_BSLH>, <&kp JP_UNDER>;
             mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        /*
+         * ② 追加：ろキー相当の hold-tap
+         *  - タップ: JPmm_ro_under（\ / _）
+         *  - 長押し: Right Shift
+         * 使うときは keymap で「&JPro_mt_ro」と書く（引数なし）
+         */
+        JPro_mt_ro: JPro_mt_ro {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+
+            bindings = <&kp RSHFT>, <&JPmm_ro_under>;
         };
     };
 };
