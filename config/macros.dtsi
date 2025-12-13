@@ -236,7 +236,7 @@
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
 
-            bindings = <&kp RSHFT>, <&JPmm_ro_under>;
+            bindings = <&kp RSHFT &JPmm_ro_under>;
         };
     };
 };
