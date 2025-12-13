@@ -223,20 +223,18 @@
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
-        /*
-         * ② 追加：ろキー相当の hold-tap
-         *  - タップ: JPmm_ro_under（\ / _）
-         *  - 長押し: Right Shift
-         * 使うときは keymap で「&JPro_mt_ro」と書く（引数なし）
-         */
+        /* ro: tap=JPmm_ro_under, hold=Right Shift */
         JPro_mt_ro: JPro_mt_ro {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            label = "JPRO_MT_RO";
+            #binding-cells = <1>;          /* ← &kp 用にキーコード1つを keymap から受け取る */
 
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
 
-            bindings = <&kp RSHFT &JPmm_ro_under>;
+            /* ここは「引数なし」で phandle だけ並べる（←今回のエラーのポイント） */
+            bindings = <&kp &JPmm_ro_under>;
         };
+
     };
 };
