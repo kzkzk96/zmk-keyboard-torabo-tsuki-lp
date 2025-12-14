@@ -30,7 +30,6 @@
         };
 
         // UI:進む
-
         combo_UI {
             bindings = <&mkp MB5>;
             key-positions = <19 20>;
@@ -38,7 +37,6 @@
         };
 
         // IO:戻る
-
         combo_IO {
             bindings = <&mkp MB4>;
             key-positions = <20 21>;
@@ -46,7 +44,6 @@
         };
 
         /* ★追加：JL コンボ → layer5 ON */
-
         scroll_mode {
             bindings = <&mo 5>;
             key-positions = <33 35>;
@@ -59,63 +56,62 @@
 
         layer_0 {
             bindings = <
-&none      &none         &none         &none  &none             &none                                          &none        &none  &none           &none         &none           &none
-&kp TAB    &kp Q         &kp W         &kp E  &kp R             &kp T                                          &kp Y        &kp U  &kp I           &kp O         &kp P           &JPmm_at_grave
-&kp LCTRL  &kp A         &kp S         &kp D  &kp F             &kp G        &none             &none           &kp H        &kp J  &kp K           &kp L         &JPmm_minus_eq  &kp RCTRL
-&kp LSHFT  &kp Z         &kp X         &kp C  &kp V             &kp B        &msc SCRL_UP      &msc SCRL_DOWN  &kp N        &kp M  &JPmm_comma_lt  &JPmm_dot_gt  &JPmm_slash_qm  &JPro_mt_ro RSHFT 0
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none  &lt 3 LANGUAGE_2  &lt 2 SPACE  &lt 1 LANGUAGE_1  &lt 1 BSPC      &lt 4 ENTER  &none  &none           &kp ESCAPE    &kp RIGHT_ALT   &kp RCTRL
+                &none      &none         &none         &none  &none             &none                                          &none        &none  &none           &none         &none           &none
+                &kp TAB    &kp Q         &kp W         &kp E  &kp R             &kp T                                          &kp Y        &kp U  &kp I           &kp O         &kp P           &JPmm_at_grave
+                &kp LCTRL  &kp A         &kp S         &kp D  &kp F             &kp G        &none             &none           &kp H        &kp J  &kp K           &kp L         &JPmm_minus_eq  &kp RCTRL
+                &kp LSHFT  &kp Z         &kp X         &kp C  &kp V             &kp B        &msc SCRL_UP      &msc SCRL_DOWN  &kp N        &kp M  &JPmm_comma_lt  &JPmm_dot_gt  &JPmm_slash_qm  &JPro_mt_ro RSHFT 0
+                &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none  &lt 3 LANGUAGE_2  &lt 2 SPACE  &lt 1 LANGUAGE_1  &lt 1 BSPC      &lt 4 ENTER  &none  &none           &kp ESCAPE    &kp RIGHT_ALT   &kp RCTRL
             >;
         };
 
         layer_1 {
             bindings = <
-&none      &none         &none         &none      &none             &none                                        &none        &none           &none         &none       &none          &none
-&kp TAB    &kp F1        &kp F2        &kp F3     &kp F4            &kp F5                                       &kp F6       &kp F7          &kp F8        &kp F9      &kp F10        &kp F11
-&kp LCTRL  &none         &none         &mkp RCLK  &mkp LCLK         &none        &none             &none         &kp LEFT     &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT   &kp TAB        &kp F12
-&kp LSHFT  &none         &none         &none      &none             &none        &none             &none         &none        &none           &none         &none       &none          &kp RIGHT_SHIFT
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none      &kp LANGUAGE_2  &kp SPACE  &kp LANGUAGE_1  &kp BSPC  &kp ENTER  &none           &none         &kp ESCAPE  &kp RIGHT_ALT  &kp RCTRL
+                &none      &none         &none         &none      &none             &none                                        &none        &none           &none         &none       &none          &none
+                &kp TAB    &kp F1        &kp F2        &kp F3     &kp F4            &kp F5                                       &kp F6       &kp F7          &kp F8        &kp F9      &kp F10        &kp F11
+                &kp LCTRL  &none         &none         &mkp RCLK  &mkp LCLK         &none        &none             &none         &kp LEFT     &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT   &kp TAB        &kp F12
+                &kp LSHFT  &none         &none         &none      &none             &none        &none             &none         &none        &none           &none         &none       &none          &kp RIGHT_SHIFT
+                &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none      &kp LANGUAGE_2    &kp SPACE   &kp LANGUAGE_1    &kp BSPC     &kp ENTER  &none           &none         &kp ESCAPE  &kp RIGHT_ALT  &kp RCTRL
             >;
         };
 
         layer_2 {
             bindings = <
-&none      &none         &none         &none         &none             &none                                       &none            &none             &none              &none            &none           &none
-&trans     &JPmm_1_excl  &JPmm_2_dq    &JPmm_3_hash  &JPmm_4_doll      &JPmm_5_perc                                &JPmm_6_amp      &JPmm_7_sq        &JPmm_8_lpar       &JPmm_9_rpar     &kp N0          &JPmm_at_grave
-&trans     &none        &none       &none       &none            &none        &none            &none    &JPmm_lbkt_lbr   &JPmm_rbkt_rbr    &JPmm_caret_tilde  &JPmm_yen_pipe  &JPmm_minus_eq  &mt RCTRL LG(LS(S))
-&trans     &none        &none        &none        &none            &none        &none            &none      &JPmm_semi_plus  &JPmm_colon_astr  &JPmm_comma_lt     &JPmm_dot_gt     &JPmm_slash_qm  &JPro_mt_ro RSHFT 0
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none         &kp LANGUAGE_2  &kp SPACE   &kp LANGUAGE_1  &kp DELETE  &kp ENTER      &none             &none              &kp ESCAPE       &kp RIGHT_ALT   &kp RCTRL
+                &none      &none         &none         &none         &none             &none                                       &none            &none             &none              &none            &none           &none
+                &trans     &JPmm_1_excl  &JPmm_2_dq    &JPmm_3_hash  &JPmm_4_doll      &JPmm_5_perc                                &JPmm_6_amp      &JPmm_7_sq        &JPmm_8_lpar       &JPmm_9_rpar     &kp N0          &JPmm_at_grave
+                &trans     &none         &none         &none         &none             &none        &none            &none          &JPmm_lbkt_lbr   &JPmm_rbkt_rbr    &JPmm_caret_tilde  &JPmm_yen_pipe  &JPmm_minus_eq  &mt RCTRL LG(LS(S))
+                &trans     &none         &none         &none         &none             &none        &none            &none          &JPmm_semi_plus  &JPmm_colon_astr  &JPmm_comma_lt     &JPmm_dot_gt     &JPmm_slash_qm  &JPro_mt_ro RSHFT 0
+                &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none         &kp LANGUAGE_2    &kp SPACE   &kp LANGUAGE_1    &kp DELETE   &kp ENTER        &none             &none              &kp ESCAPE       &kp RIGHT_ALT   &kp RCTRL
             >;
         };
 
         layer_3 {
             bindings = <
-&none      &none         &none         &none         &none             &none                                      &none             &none      &none          &none       &none          &none
-&trans     &kp JP_EXCL        &kp JP_DQ        &kp JP_HASH        &kp JP_DOLL            &kp JP_PERC                                     &kp JP_AMP          &kp JP_SQ  &kp JP_LPAR  &kp JP_RPAR     &none     &kp JP_GRAVE
-&trans     &kp F6        &kp F7        &kp F8        &kp F9            &kp F10      &trans            &trans      &kp JP_LBR          &kp JP_RBR   &kp JP_TILDE   &kp JP_PIPE   &kp JP_EQ        &mt RCTRL LG(LS(S))
-&trans     &kp F11       &kp F12       &out OUT_USB  &out OUT_BLE      &bt BT_NXT   &trans            &trans      &kp JP_PLUS  &kp JP_ASTR    &kp JP_LT      &kp JP_GT   &kp JP_QMARK       &mt RSHFT JP_UNDER
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none         &kp LANGUAGE_2  &kp SPACE  &kp LANGUAGE_1  &kp BSPC  &kp ENTER       &none      &none          &kp ESCAPE  &kp RIGHT_ALT  &kp RCTRL
+                &none      &none         &none         &none         &none             &none                                      &none             &none      &none          &none       &none          &none
+                &trans     &kp JP_EXCL   &kp JP_DQ     &kp JP_HASH   &kp JP_DOLL       &kp JP_PERC                               &kp JP_AMP         &kp JP_SQ  &kp JP_LPAR   &kp JP_RPAR     &none     &kp JP_GRAVE
+                &trans     &none         &none         &none         &none             &none     &none            &none      &kp JP_LBR      &kp JP_RBR   &kp JP_TILDE   &kp JP_PIPE   &kp JP_EQ        &mt RCTRL LG(LS(S))
+                &trans     &none         &none         &none         &none             &none     &none            &none      &kp JP_PLUS    &kp JP_ASTR    &kp JP_LT      &kp JP_GT   &kp JP_QMARK     &mt RSHFT JP_UNDER
+                &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none         &kp LANGUAGE_2    &kp SPACE  &kp LANGUAGE_1    &kp BSPC    &kp ENTER       &none      &none          &kp ESCAPE  &kp RIGHT_ALT  &kp RCTRL
             >;
         };
 
         layer_4 {
             bindings = <
-&none   &none         &none         &none         &none         &none                         &none   &none   &none   &none   &none   &none
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &none  &none        &none        &none        &none        &none                         &none  &none  &none  &none  &none  &none
+                &none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                  &none  &none  &none  &none  &none  &none
+                &none  &none        &none        &none        &none        &none        &none  &none  &none  &none  &none  &none  &none  &none
+                &none  &none        &none        &none        &none        &none        &none  &none  &none  &none  &none  &none  &none  &none
+                &none  &none        &none        &none        &none        &none        &none  &none  &none  &none  &none  &none  &none  &none
             >;
         };
 
         /* ★追加：スクロールモード用 layer_5 shiftのみ */
-
         layer_5 {
             bindings = <
-&none           &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
-&none           &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
-&none           &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&kp LEFT_SHIFT  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &kp RIGHT_SHIFT
-&none           &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+                &none           &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
+                &none           &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
+                &none           &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+                &kp LEFT_SHIFT  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &kp RIGHT_SHIFT
+                &none           &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
             >;
         };
     };
