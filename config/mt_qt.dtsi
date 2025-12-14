@@ -1,0 +1,17 @@
+/ {
+    behaviors {
+        mt_qt: mt_qt {
+            compatible = "zmk,behavior-mod-tap";
+            #behavior-cells = <2>;
+
+            /* タップ/ホールド判定の境界 */
+            tapping-term-ms = <180>;
+
+            /* 素早い再タップは必ずタップ扱い */
+            quick-tap-ms = <150>;
+
+            /* 少し長く押しても、すぐ離せばタップに救済 */
+            retro-tap;
+        };
+    };
+};
