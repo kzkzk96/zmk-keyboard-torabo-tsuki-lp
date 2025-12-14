@@ -37,9 +37,9 @@
  * - _ や | は LS() で「Shift込みの物理キー」を送る
  */
 #define JP_BSLH   NUBS          // \  (ろキー相当)
-#define JP_UNDER  LS(NUBS)      // _  (Shift+ろ)
-#define JP_YEN    BSLH          // ¥キー相当（物理キーは \ / ¥ の所。OS側で¥になるのは許容）
-#define JP_PIPE   LS(BSLH)      // |  (Shift+¥キー)
+#define JP_UNDER  LS(0x87)       // _  (Shift+ろ)
+#define JP_YEN    0x89          // ¥キー相当（物理キーは \ / ¥ の所。OS側で¥になるのは許容）
+#define JP_PIPE   LS(0x89)       // | 
 
 #define JP_RBKT   BSLH          // ]  (]キー) ※ここはあなたの既存定義を維持
 #define JP_CARET  EQUAL         // ^  (^~キーの通常)
