@@ -36,7 +36,8 @@
  * - ¥キー相当  → BSLH (Backslash)
  * - _ や | は LS() で「Shift込みの物理キー」を送る
  */
-#define JP_BSLH   NUBS          // \  (ろキー相当)
+
+//#define JP_BSLH   NUBS          // \  (ろキー相当) キーが入力できない。
 #define JP_UNDER  LS(0x87)       // _  (Shift+ろ)
 #define JP_YEN    0x89          // ¥キー相当（物理キーは \ / ¥ の所。OS側で¥になるのは許容）
 #define JP_PIPE   LS(0x89)       // | 
@@ -208,7 +209,7 @@
         };
 
         // ¥キー: tap=\ (物理キー), Shiftで | になるようにしたい → 2つ目を JP_PIPE(=LS(BSLH)) にする
-        JPmm_bslh_pipe: JPmm_bslh_pipe {
+        JPmm_yen_pipe: JPmm_yen_pipe {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp JP_YEN>, <&kp JP_PIPE>;
