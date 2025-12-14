@@ -219,7 +219,7 @@
         JPmm_ro_under: JPmm_ro_under {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp JP_BSLH>, <&kp JP_UNDER>;
+            bindings = <&kp JP_YEN>, <&kp JP_UNDER>;
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
