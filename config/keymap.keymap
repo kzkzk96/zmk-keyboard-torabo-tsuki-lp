@@ -9,6 +9,10 @@
 / {
     /* 新しい動作の定義 */
     behaviors {
+        /*
+         * lt_repeat: 短押しでバックスペース、長押しでレイヤー切り替え。
+         * ただし、短押し直後に長押し（タップ・ホールド）すると、バックスペースを連続入力（リピート）します。
+         */
         lt_repeat: layer_tap_repeat {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -29,14 +33,14 @@
             layers = <4>;
         };
 
-        // 左クリック (33番と34番のキーを同時押し)
+        // 左クリック
         L_click {
             bindings = <&mkp LCLK>;
             key-positions = <33 34>;
             layers = <0 1 2 3 4 5>;
         };
 
-        // 右クリック (34番と35番のキーを同時押し)
+        // 右クリック
         R_click {
             bindings = <&mkp RCLK>;
             key-positions = <34 35>;
@@ -73,7 +77,7 @@
             bindings = <
                 &none      &none         &none         &none  &none             &none                                                           &none        &none  &none           &none         &none           &none
                 &kp TAB    &kp Q         &kp W         &kp E  &kp R             &kp T                                                           &kp Y        &kp U  &kp I           &kp O         &kp P           &JPmm_at_grave
-                &kp LCTRL  &a_nr         &s_nr         &kp D  &kp F             &kp G         &none             &none            &kp H        &kp J  &kp K           &l_nr         &JPmm_minus_eq  &kp RCTRL
+                &kp LCTRL  &a_nr         &s_nr         &kp D  &kp F             &kp G         &none             &none            &kp H        &j_nr  &k_nr           &l_nr         &JPmm_minus_eq  &kp RCTRL
                 &kp LSHFT  &kp Z         &kp X         &kp C  &kp V             &kp B         &none             &mo 4            &kp N        &kp M  &JPmm_comma_lt  &JPmm_dot_gt  &JPmm_slash_qm  &JPro_mt_ro RSHFT 0
                 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none  &lt 3 LANGUAGE_2  &lt 2 SPACE  &lt 1 LANGUAGE_1  &lt_repeat 1 BSPC  &lt 4 ENTER  &none  &none           &kp ESCAPE    &kp RIGHT_ALT   &kp RCTRL
             >;
