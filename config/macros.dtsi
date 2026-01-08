@@ -52,6 +52,30 @@
 #define JP_TILDE  PLUS          // ~  (^~キーの Shift)
 
 / {
+/* 連続入力を防ぐためのマクロ定義 */
+macros {
+a_nr: a_nr {
+compatible = "zmk,behavior-macro";
+#binding-cells = <0>;
+wait-ms = <0>;
+tap-ms = <0>;
+bindings = <&kp A>;
+};
+s_nr: s_nr {
+compatible = "zmk,behavior-macro";
+#binding-cells = <0>;
+wait-ms = <0>;
+tap-ms = <0>;
+bindings = <&kp S>;
+};
+l_nr: l_nr {
+compatible = "zmk,behavior-macro";
+#binding-cells = <0>;
+wait-ms = <0>;
+tap-ms = <0>;
+bindings = <&kp L>;
+};
+};
     behaviors {
 
         /* ===== JIS symbol mod-morph ===== */
