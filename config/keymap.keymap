@@ -67,6 +67,13 @@
             key-positions = <33 35>;
             layers = <0 1 2 3 4 5>;
         };
+
+        // スクロールモード (レイヤー6一時切り替え)
+        scroll_mode {
+            bindings = <&mo 6>;
+            key-positions = <33 34 35>;
+            layers = <0 1 2 3 4 5>;
+        };
     };
 
     keymap {
@@ -129,6 +136,17 @@
 
         // レイヤー 5: スクロールモード
         layer_5 {
+            bindings = <
+                &none           &none  &none  &none  &none  &none                 &none  &none  &none  &none  &none  &none
+                &none           &none  &none  &none  &none  &none                 &none  &none  &none  &none  &none  &none
+                &none           &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+                &kp LEFT_SHIFT  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &kp RIGHT_SHIFT
+                &none           &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+            >;
+        };
+
+        // レイヤー 6: スクロールモード
+        layer_6 {
             bindings = <
                 &none           &none  &none  &none  &none  &none                 &none  &none  &none  &none  &none  &none
                 &none           &none  &none  &none  &none  &none                 &none  &none  &none  &none  &none  &none
