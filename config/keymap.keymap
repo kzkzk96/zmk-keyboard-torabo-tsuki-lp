@@ -62,7 +62,7 @@
         };
 
         // スクロールモード (レイヤー5一時切り替え)
-        scroll_mode {
+        scroll_mode_Yonly {
             bindings = <&mo 5>;
             key-positions = <33 35>;
             layers = <0 1 2 3 4 5>;
@@ -134,7 +134,7 @@
             >;
         };
 
-        // レイヤー 5: スクロールモード
+        // レイヤー 5: スクロールモード縦のみ
         layer_5 {
             bindings = <
                 &none           &none  &none  &none  &none  &none                 &none  &none  &none  &none  &none  &none
@@ -145,7 +145,7 @@
             >;
         };
 
-        // レイヤー 6: スクロールモード
+        // レイヤー 6: スクロールモード縦横
         layer_6 {
             bindings = <
                 &none           &none  &none  &none  &none  &none                 &none  &none  &none  &none  &none  &none
