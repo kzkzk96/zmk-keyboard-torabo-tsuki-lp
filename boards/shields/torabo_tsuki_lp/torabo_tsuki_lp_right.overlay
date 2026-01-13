@@ -60,7 +60,7 @@
         input-processors = <
             &zip_xy_to_scroll_mapper
             &zip_scroll_scaler 2 10
-            &zip_scroll_x_scaler 1 50 /* 横方向を 1/50 倍で鈍感にします */
+            &zip_scroll_x_scaler 1 20 /* 横方向を 1/20 倍で鈍感にします */
             &zip_scroll_y_scaler 1 10 /* 縦方向は通常の感度 */
             &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) /* お好みの方向に反転 */
         >;
