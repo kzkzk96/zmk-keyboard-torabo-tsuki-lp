@@ -42,17 +42,27 @@
         &zip_y_scaler 4 5
     >;
 
-    /* layer 5 のときだけスクロールに変換（カーソル側の0.6倍とは独立） */
-    scroll_layer {
+    /* レイヤー 5：縦スクロールのみ */
+    v_scroll_only {
         layers = <5>;
-
         input-processors = <
-            /*&zip_x_scaler 1 2*/
             &zip_xy_to_scroll_mapper
             &zip_scroll_scaler 2 10
-            &zip_scroll_x_scaler 1 50
-            &zip_scroll_y_scaler 1 10
-            &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT)
+            &zip_scroll_x_scaler 0 1  /* 横方向を 0 倍にして動かなくします */
+            &zip_scroll_y_scaler 1 10 /* 縦方向は通常の感度 */
+            &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) /* お好みの方向に反転 */
+        >;
+    };
+
+    /* レイヤー 6：縦横スクロール（横は鈍感設定） */
+    hv_scroll_mixed {
+        layers = <6>;
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_scaler 2 10
+            &zip_scroll_x_scaler 1 50 /* 横方向を 1/50 倍で鈍感にします */
+            &zip_scroll_y_scaler 1 10 /* 縦方向は通常の感度 */
+            &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) /* お好みの方向に反転 */
         >;
     };
 };
