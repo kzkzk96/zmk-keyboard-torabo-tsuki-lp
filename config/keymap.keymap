@@ -37,35 +37,35 @@
         L_click {
             bindings = <&mkp LCLK>;
             key-positions = <33 34>;
-            layers = <0 1 2 3 4 5>;
+            layers = <0 1 2 3 4>;
         };
 
         // 右クリック
         R_click {
             bindings = <&mkp RCLK>;
             key-positions = <34 35>;
-            layers = <0 1 2 3 4 5>;
+            layers = <0 1 2 3 4>;
         };
 
         // マウスボタン5: 進む
         combo_UI {
             bindings = <&mkp MB5>;
             key-positions = <19 20>;
-            layers = <0 1 2 3 4 5>;
+            layers = <0 1 2 3 4>;
         };
 
         // マウスボタン4: 戻る
         combo_IO {
             bindings = <&mkp MB4>;
             key-positions = <20 21>;
-            layers = <0 1 2 3 4 5>;
+            layers = <0 1 2 3 4>;
         };
 
         // スクロールモード (レイヤー5一時切り替え)
         scroll_mode_Yonly {
             bindings = <&mo 5>;
             key-positions = <33 35>;
-            layers = <0 1 2 3 4 5>;
+            layers = <0 1 2 3 4>;
         };
 
         /*レイヤ5の&mo 6との競合のため、削除
