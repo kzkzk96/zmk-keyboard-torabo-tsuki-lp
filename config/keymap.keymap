@@ -68,12 +68,14 @@
             layers = <0 1 2 3 4 5>;
         };
 
+        /*レイヤ5の&mo 6との競合のため、削除
         // スクロールモード (レイヤー6一時切り替え)
         scroll_mode {
             bindings = <&mo 6>;
             key-positions = <33 34 35>;
             layers = <0 1 2 3 4 5>;
         };
+        */
     };
 
     keymap {
